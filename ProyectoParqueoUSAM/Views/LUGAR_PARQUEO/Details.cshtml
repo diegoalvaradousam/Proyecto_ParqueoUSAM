@@ -1,0 +1,34 @@
+﻿@model ProyectoParqueoUSAM.Models.LUGAR_PARQUEO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LUGAR_PARQUEO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_PARQUEO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_PARQUEO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION_D_PARQUEO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION_D_PARQUEO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PARQUEO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
