@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Proyecto_ParqueoUSAM.TICKET>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CLIENTE.NOMBRE_CLIENTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LUGAR_PARQUEO.NOMBRE_PARQUEO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_TICKET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIEMPO_PARQUEO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COSTO_FINAL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CLIENTE.NOMBRE_CLIENTE)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LUGAR_PARQUEO.NOMBRE_PARQUEO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TIPO_TICKET)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoloFecha)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TIEMPO_PARQUEO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalPago)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID_TICKET }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID_TICKET }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID_TICKET })
+    </td>
+</tr>
+}
+
+</table>
